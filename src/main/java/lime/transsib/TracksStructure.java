@@ -5,6 +5,11 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
+import mods.railcraft.common.blocks.tracks.EnumTrack;
+import mods.railcraft.common.blocks.tracks.EnumTrackMeta;
+import mods.railcraft.common.blocks.tracks.TileTrack;
+import mods.railcraft.common.blocks.tracks.TrackTools;
+
 import java.util.Random;
 
 public class TracksStructure extends WorldGenerator
@@ -71,7 +76,9 @@ public class TracksStructure extends WorldGenerator
             buildCeiling(w, x, y+3, z);
             w.setBlock(     x, y+2, z, Blocks.air);
             w.setBlock(     x, y+1, z, Blocks.air);
-            w.setBlock(     x, y+0, z, Blocks.stone_slab);
+            EnumTrack track = EnumTrack.JUNCTION;
+            TileTrack tile = TrackTools.placeTrack(track.getTrackSpec(), w, x, y+0, z, EnumTrackMeta.NORTH_SOUTH.ordinal());
+            //w.setBlock(     x, y+0, z, TrackJunction);
 
             // and clean up some space around
             buildCeiling(w, x-1, y+3, z-1);
