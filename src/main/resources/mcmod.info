@@ -11,6 +11,6 @@
   "credits": "Lime",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": []
+  "dependencies": ["Railcraft"]
 }
 ]
